@@ -92,9 +92,8 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/vid/pose_16.mp4"
-                type="video/mp4">
+      <video id="teaser" autoplay muted loop playsinline width="100%">
+        <source src="./static/vid/pose_16.mp4" type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
         <span class="dpchands">PCHands</span> retarget pose from human hand to 15 manipulators with different DoFs.
@@ -112,7 +111,6 @@
 
         <div class="content has-text-justified">
           <p>
-            we extend the use of anchors onto manipulators from 2-finger grippers to anthropomorphic hands.
             22 anchors are manually placed on each manipulator to create an unified representation across different manipulators.
           </p>
         </div>
@@ -140,11 +138,12 @@
         <h3 class="title is-3">Model Architecture</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dpchands">PCHands</span>, you can retarget human hand pose to humanoid robot (ErgoCub).
+            The proposed approach consists of a CVAE to handle inter-manipulator variation,
+            and a linear PCA to extract the most significant DoFs in representing manipulator poses.
           </p>
         </div>
         <div class="content has-text-centered">
-          <video id="" autoplay controls muted loop playsinline width="100%">
+          <video id="" autoplay controls muted loop playsinline width="70%">
             <source src="./static/vid/model.mp4" type="video/mp4">
           </video>
         </div>
@@ -152,7 +151,8 @@
         <h2 class="title is-3">Anchor Synergies</h2>
         <div class="content has-text-justified">
           <p>
-            CVAE + PCA
+            The most significant principal component corresponds to the dimension that is
+            universal in representing simple openings.
           </p>
         </div>
 
@@ -169,42 +169,136 @@
         <br/>
 
         <h2 class="title is-3">Pose Retargeting</h2>
-        <h3 class="title is-4">Retargeting Humanoid with <span class="dpchands">PCHands</span></h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dpchands">PCHands</span>, you can retarget human hand pose to humanoid robot (ErgoCub).
+            Retargeting human hand pose onto humanoid (ErgoCub) hand.
           </p>
         </div>
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="100%">
-            <source src="./static/vid/retarget_hand_ergo.mp4"
-                    type="video/mp4">
+          <video controls muted preload playsinline width="70%">
+            <source src="./static/vid/retarget_hand_ergo.mp4" type="video/mp4">
           </video>
         </div>
 
-        <h3 class="title is-4">Tele-Operating Humanoid with <span class="dpchands">PCHands</span></h3>
+        <h3 class="title is-3">Tele-Operating</h3>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dpchands">PCHands</span>, you can tele-operate humanoid robot (ErgoCub) to perform grasping task by just using an RGBD camera.
+            Tele-operating humanoid (ErgoCub) robot to perform grasping task.
           </p>
         </div>
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="100%">
-            <source src="./static/vid/retarget_tele.mp4"
-                    type="video/mp4">
+          <video controls muted preload playsinline width="100%">
+            <source src="./static/vid/retarget_tele.mp4" type="video/mp4">
           </video>
         </div>
 
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--<section class="section">-->
+<!--  <div class="container is-max-desktop">-->
+<!--    <h3 class="title is-3">Manipulation Task with RL</h3>-->
+<!--    <div class="content has-text-justified">-->
+<!--      <p>-->
+<!--        Collection demonstrations from human hand pose retargeting to customized hand embodiment in simulation.-->
+<!--        Pose-->
+<!--      </p>-->
+<!--    </div>-->
+<!--    <div class="columns is-centered">-->
+<!--      <div class="column is-centered"></div>-->
+<!--      <div class="column is-centered">-->
+<!--        <div class="content is-centered ">-->
+<!--          <img src="./static/images/hand_down.jpg"/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="column is-centered"></div>-->
+<!--    </div>-->
+
+<!--    <div class="columns is-centered">-->
+<!--      <div class="column is-centered"></div>-->
+<!--      <div class="column is-centered">-->
+<!--        <div class="content is-centered ">-->
+<!--          <video autoplay controls muted loop playsinline width="100%">-->
+<!--            <source src="./static/vid/demo_customized.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="column is-centered"></div>-->
+<!--    </div>-->
+
+<!--    <div class="columns is-centered">-->
+<!--      <div class="column">-->
+<!--        <div class="content">-->
+<!--          <video autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/vid/demo_allegro.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="column">-->
+<!--        <div class="content">-->
+<!--          <video autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/vid/demo_schunk.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="column">-->
+<!--        <div class="content">-->
+<!--          <video autoplay controls muted loop playsinline height="100%">-->
+<!--            <source src="./static/vid/demo_shadow.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3">Demonstration For Manipulation Tasks</h3>
+    <div class="content has-text-justified">
+      <p>
+        The collection of demonstration consists of retargeting human hand pose to robotic embodiments in simulation.
+      </p>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-centered"></div>
+      <div class="column is-centered">
+        <div class="content is-centered ">
+          <img src="./static/images/hand_downs.jpg"/>
+        </div>
+      </div>
+      <div class="column is-centered"></div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/vid/demo_customized.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/vid/demo_kinova2f.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/vid/demo_ergocub.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </div>
