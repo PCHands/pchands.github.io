@@ -13,8 +13,10 @@ body {
     margin-bottom: 5px;
 }
 
-.dnerf {
-  font-variant: small-caps;
+.dpchands {
+  font-variant: normal;
+  font-style: normal;
+  color: MidnightBlue
 }
 
 
